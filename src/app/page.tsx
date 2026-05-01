@@ -38,7 +38,7 @@ export default function Home() {
           </span>
 
           <h1 className="mt-6 text-5xl font-bold leading-tight md:text-7xl">
-            Luis Aquije
+            Luis Aquije.
           </h1>
 
           <h2 className="mt-4 text-2xl font-semibold text-emerald-400 md:text-3xl">
