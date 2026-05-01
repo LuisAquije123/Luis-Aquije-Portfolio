@@ -1,65 +1,244 @@
+// app/page.tsx
+
+import { Shield, ServerCog, Terminal } from "lucide-react";
+import { Mail } from "lucide-react";
 import Image from "next/image";
 
+
 export default function Home() {
+
+  const links = [
+    {
+      name: "GitHub",
+      href: "https://github.com/LuisAquije123",
+      icon: "/icons/github.svg",
+      alt: "GitHub",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/in/luis-aquije-80507b234",
+      icon: "/icons/linkedin.svg",
+      alt: "LinkedIn",
+    },
+    {
+      name: "Email",
+      href: "mailto:luisaquijequiroga11@gmail.com",
+      icon: null,
+      alt: "Email",
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-zinc-950 text-zinc-100">
+      {/* HERO */}
+      <section className="flex min-h-screen flex-col justify-center px-8 py-16 md:px-20">
+        <div className="max-w-5xl">
+          <span className="mb-4 inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1 text-sm text-emerald-400">
+            DevSecOps Engineer
+          </span>
+
+          <h1 className="mt-6 text-5xl font-bold leading-tight md:text-7xl">
+            Luis Aquije
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <h2 className="mt-4 text-2xl font-semibold text-emerald-400 md:text-3xl">
+            Building secure software, scalable infrastructure and automated delivery
+            pipelines.
+          </h2>
+
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400 md:text-xl">
+            Software developer specialized in DevSecOps, cloud infrastructure and
+            secure software development. Focused on AWS environments, CI/CD
+            automation, modern web applications with React, backend development with
+            Python and security practices integrated throughout the software lifecycle.
           </p>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="rounded-xl bg-emerald-500 px-6 py-3 font-medium text-black transition hover:bg-emerald-400"
+            >
+              View Projects
+            </a>
+
+            <a
+              href="#contact"
+              className="rounded-xl border border-zinc-700 px-6 py-3 font-medium transition hover:border-zinc-500 hover:bg-zinc-900"
+            >
+              Contact Me
+            </a>
+          </div>
+
+          {/* TECH STACK */}
+
+          <div className="mt-14 flex flex-wrap gap-3 text-sm text-zinc-300">
+            {[
+              "AWS",
+              "CI/CD",
+              "GitHub Actions",
+              "Docker",
+              "React",
+              "Python",
+              "DevSecOps",
+              "Software Security",
+              "IoT",
+              "Linux",
+              "Automation",
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-2"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ABOUT */}
+      <section className="border-t border-zinc-900 px-8 py-20 md:px-20">
+        <div className="max-w-6xl">
+          <h2 className="text-3xl font-bold">Core Expertise</h2>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <ServerCog className="mb-4 text-emerald-400" size={36} />
+
+              <h3 className="text-xl font-semibold">DevSecOps</h3>
+
+              <p className="mt-4 text-zinc-400">
+                Building secure CI/CD pipelines, automating deployments and integrating
+                security into every stage of the development lifecycle.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <Shield className="mb-4 text-emerald-400" size={36} />
+
+              <h3 className="text-xl font-semibold">Secure Development</h3>
+
+              <p className="mt-4 text-zinc-400">
+                Applying secure coding practices, authentication systems and security
+                testing to modern software applications.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <Terminal className="mb-4 text-emerald-400" size={36} />
+
+              <h3 className="text-xl font-semibold">Cloud & Automation</h3>
+
+              <p className="mt-4 text-zinc-400">
+                Working with AWS infrastructure, automation scripts and scalable cloud
+                solutions for modern applications.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section
+        id="projects"
+        className="border-t border-zinc-900 px-8 py-20 md:px-20"
+      >
+        <div className="max-w-6xl">
+          <h2 className="text-3xl font-bold">Featured Projects</h2>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <h3 className="text-2xl font-semibold">
+                Secure CI/CD Pipeline
+              </h3>
+
+              <p className="mt-4 text-zinc-400">
+                Automated deployment pipeline using multiple branches, 
+                each with its own instance, GitHub Actions, and 
+                environment variables to avoid hardcoding credentials.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2 text-sm">
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  GitHub Actions
+                </span>
+                <span className="rounded bg-zinc-800 px-3 py-1">Docker</span>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <h3 className="text-2xl font-semibold">
+                Smart Irrigation System
+              </h3>
+
+              <p className="mt-4 text-zinc-400">
+                IoT-based automated irrigation system built with ESP32 sensors and
+                intelligent watering logic. Designed to optimize water consumption by
+                monitoring environmental conditions and automating irrigation processes.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2 text-sm">
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  ESP32
+                </span>
+
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  IoT
+                </span>
+
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  MQTT
+                </span>
+
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  Automation
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section
+        id="contact"
+        className="border-t border-zinc-900 px-8 py-20 md:px-20"
+      >
+        <div className="max-w-4xl">
+          <h2 className="text-3xl font-bold">Contact</h2>
+
+          <p className="mt-4 text-zinc-400">
+            Interested in collaborating or discussing DevOps & security?
+          </p>
+
+          // Reemplaza TODO el bloque de links dentro de CONTACT por esto
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-xl border border-zinc-800 px-5 py-3 transition hover:bg-zinc-900"
+              >
+                {link.icon ? (
+                  <Image
+                    src={link.icon}
+                    alt={link.alt}
+                    width={18}
+                    height={18}
+                    className="invert"
+                  />
+                ) : (
+                  <Mail size={18} />
+                )}
+
+                {link.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
