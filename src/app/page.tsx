@@ -50,9 +50,10 @@ export default function Home() {
             Software developer specialized in DevSecOps, cloud infrastructure and
             secure software development. Focused on AWS environments, CI/CD
             automation, modern web applications with React, backend development with
-            Python and security practices integrated throughout the software lifecycle.
+            Python, IoT solutions with ESP32 and secure development practices across
+            the software lifecycle. Also experienced building professional websites
+            and business solutions with WordPress.
           </p>
-
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#projects"
@@ -82,6 +83,8 @@ export default function Home() {
               "DevSecOps",
               "Software Security",
               "IoT",
+              "ESP32",
+              "Wordpress",
               "Linux",
               "Automation",
             ].map((tech) => (
@@ -133,6 +136,17 @@ export default function Home() {
                 solutions for modern applications.
               </p>
             </div>
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <Terminal className="mb-4 text-emerald-400" size={36} />
+
+              <h3 className="text-xl font-semibold">Web Solutions</h3>
+
+              <p className="mt-4 text-zinc-400">
+                Developing modern websites and business platforms using WordPress,
+                React and scalable web technologies.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -152,8 +166,8 @@ export default function Home() {
               </h3>
 
               <p className="mt-4 text-zinc-400">
-                Automated deployment pipeline using multiple branches, 
-                each with its own instance, GitHub Actions, and 
+                Automated deployment pipeline using multiple branches,
+                each with its own instance, GitHub Actions, and
                 environment variables to avoid hardcoding credentials.
               </p>
 
@@ -194,6 +208,35 @@ export default function Home() {
                 </span>
               </div>
             </div>
+
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8">
+              <h3 className="text-2xl font-semibold">
+                Business Websites with WordPress
+              </h3>
+
+              <p className="mt-4 text-zinc-400">
+                Development of responsive and optimized business websites using
+                WordPress, focused on performance, usability and professional design.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2 text-sm">
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  WordPress
+                </span>
+
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  SEO
+                </span>
+
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  UI/UX
+                </span>
+
+                <span className="rounded bg-zinc-800 px-3 py-1">
+                  Responsive Design
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -209,8 +252,6 @@ export default function Home() {
           <p className="mt-4 text-zinc-400">
             Interested in collaborating or discussing DevOps & security?
           </p>
-
-          // Reemplaza TODO el bloque de links dentro de CONTACT por esto
 
           <div className="mt-8 flex flex-wrap gap-4">
             {links.map((link) => (
