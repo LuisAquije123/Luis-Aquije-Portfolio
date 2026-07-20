@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luis Aquije — Portfolio (Vite + React)
 
-## Getting Started
+Landing page construida con Vite, React, TypeScript y Tailwind CSS.
 
-First, run the development server:
+## Correr en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre http://localhost:5173
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Desplegar en Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Framework preset: **Vite**. Build command: `npm run build`, output dir: `dist`.
+No requiere variables de entorno.
 
-## Learn More
+## Estructura
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  main.tsx          → punto de entrada
+  App.tsx            → ensambla las secciones
+  index.css          → paleta de colores (variables CSS)
+  components/        → un componente por sección
+  data/               → todo el contenido editable, separado del diseño
+    site.ts           → nombre, headline del hero, tech row
+    contact.ts         → email, teléfono/WhatsApp, redes sociales
+    services.ts
+    matrix.ts
+    projects.ts
+    process.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Cambiar tus datos de contacto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Todo vive en `src/data/contact.ts`:
 
-## Deploy on Vercel
+```ts
+export const contactChannels: ContactChannel[] = [
+  { id: "email", label: "Email", value: "hola@luisaquije.dev",
+    href: "mailto:hola@luisaquije.dev", primary: true },
+  { id: "whatsapp", label: "WhatsApp", value: "+51 999 999 999",
+    href: "https://wa.me/51999999999" },
+  // agrega Instagram, X, Behance, lo que necesites...
+];
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+El canal marcado con `primary: true` es el que se usa como botón principal
+"Agenda una llamada" en el nav, el hero y la sección de contacto. Los demás
+aparecen listados automáticamente debajo. Agregar una red social nueva es
+agregar un objeto al arreglo, no tocar ningún componente.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Cambiar la paleta de colores
+
+Todo el color vive en `src/index.css`:
+
+```css
+--accent: #3e7bfa;  /* color principal: CTAs, headline, links */
+--accent2: #ffb020; /* color secundario: labels, números de proceso */
+```
+
+## Agregar un proyecto nuevo
+
+Edita `src/data/projects.ts` y agrega un objeto al array `projects`:
+
+```ts
+{
+  name: "Nombre del proyecto",
+  stack: ["Next.js", "Supabase"],
+  outcome: "Qué problema resolvió, en una línea.",
+  status: "live",
+  url: "https://...",
+  ctaLabel: "Ver caso →",
+}
+```
+
+## Responsive
+
+El sitio usa los breakpoints de Tailwind (`sm`, `md`) en todas las secciones:
+nav con menú hamburguesa en móvil, la matriz de capacidades cambia de tabla a
+tarjetas apiladas por debajo de `md`, y el grid de servicios/proceso pasa de
+varias columnas a una sola en pantallas chicas.

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base */
+  --bg: #060607;
+  --surface: #121214;
+  --ink: #f2f2f0;
+  --muted: #94989f;
+  --border: #232327;
+
+  /* Accents — cambia estos dos para probar otra paleta */
+  --accent: #3e7bfa; /* principal: CTAs, headline, links */
+  --accent-soft: rgba(62, 123, 250, 0.12);
+  --accent2: #ffb020; /* secundario: labels, números de proceso */
+}
+
+* {
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
